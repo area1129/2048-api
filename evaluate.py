@@ -1,6 +1,9 @@
 from game2048.game import Game
 from game2048.displays import Display
-
+from game2048.agents import Agent
+from keras.models import load_model
+from my_agent import myAgent
+import numpy as np
 
 def single_run(size, score_to_win, AgentClass, **kwargs):
     game = Game(size, score_to_win)
@@ -16,13 +19,13 @@ if __name__ == '__main__':
 
     '''====================
     Use your own agent here.'''
-    from game2048.agents import ExpectiMaxAgent as TestAgent
+#    from game2048.agents import ExpectiMaxAgent as TestAgent
     '''===================='''
 
     scores = []
     for _ in range(N_TESTS):
         score = single_run(GAME_SIZE, SCORE_TO_WIN,
-                           AgentClass=TestAgent)
+                           AgentClass=myAgent)
         scores.append(score)
 
     print("Average scores: @%s times" % N_TESTS, sum(scores) / len(scores))
