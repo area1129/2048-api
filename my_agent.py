@@ -4,7 +4,7 @@ import numpy as np
 
 class myAgent(Agent):
     
-    def __init__(self, game, display=None,filepath='model_best_cnn3.h5'):
+    def __init__(self, game, display=None,filepath='model_best_cnn5_61802.h5'):
 
         super().__init__(game, display)
         self.model = load_model(filepath)
