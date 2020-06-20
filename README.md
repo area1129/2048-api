@@ -1,6 +1,11 @@
 # 2048-api
 A 2048 game api for training supervised learning (imitation learning) or reinforcement learning agents
 
+# How to run the code
+1. Put the your data into the folder "data" (both X.npy and Y.npy) 
+2. or run generate_data.py to generate data.
+3. Run cnn5.py.(My code about the .npy operation is at the bottom)
+
 # Code structure
 * [`game2048/`](game2048/): the main package.
     * [`game.py`](game2048/game.py): the core 2048 `Game` class.
@@ -11,6 +16,9 @@ A 2048 game api for training supervised learning (imitation learning) or reinfor
 * [`static/`](static/): frontend assets (based on Vue.js) for web app.
 * [`webapp.py`](webapp.py): run the web app (backend) demo.
 * [`evaluate.py`](evaluate.py): evaluate your self-defined agent.
+* [`my_agent.py`](my_agent.py): used in evaluate.py to use the model we had.
+* [`cnn5.py`](cnn5.py): run this .py to train the model and save the model to the filepath assigned in the py.
+* [`generate_data.py`](generate_data.py): generate data.
 
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
