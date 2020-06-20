@@ -19,5 +19,5 @@ for n in range(trys):
         game.move(direction)
         cnt = cnt+1
 
-np.save('./my_data/X0.npy',dataset[:,:16])
-np.save('./my_data/Y0.npy',dataset[:,16])
+np.save('./data/X0.npy',dataset[:,:16])
+np.save('./data/Y0.npy',dataset[:,16])
