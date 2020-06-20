@@ -36,8 +36,8 @@ NUM_CLASSES = 4                                             # four directions
 BATCH_SIZE = 1000
 INPUT_SHAPE = (4, 4, 16)                                    # from 0 to 2048
 
-# model = load_model('model_best_cnn3_6550.h5')
-filepath='model_best_cnn5_6901.h5'
+#model = load_model('model_best_cnn5_61801.h5')
+filepath='model_best_cnn5_61802.h5'
 # model_best_cnn3_6520.h5 2 more epochs
 # 02 550.4
 # 
@@ -66,14 +66,10 @@ model.add(layers.Dense(NUM_CLASSES,activation='softmax'))
 model.compile(optimizer=optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08),
               loss='categorical_crossentropy',metrics=['accuracy'])
 
-for i in range(8):
+for i in range(10):
 
-    # if i < 10: fn = "./TRdata/shuffle_0" + str(i) + "a.txt"
-    # else: fn = "./TRdata/shuffle_" + str(i) + "a.txt"
-    #fn = "./TRdata/shuffle_0" + str(i) + "a.txt"
-    #fn = "./TRdata/shuffle_" + str(i+50) + "a.txt"
-    fnx = "./zhc_data/Xe_"+str(i+35)+".npy"
-    fny = "./zhc_data/Ye_"+str(i+35)+".npy"
+    fnx = "./data/X"+str(i)+".npy"
+    fny = "./data/Y"+str(i)+".npy"
     (x_train,y_train)=read_data(fnx,fny)
     model.fit(x_train,y_train,epochs=NUM_EPOCHS,batch_size=BATCH_SIZE)
     model.save(filepath)
